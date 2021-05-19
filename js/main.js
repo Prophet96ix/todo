@@ -47,22 +47,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function createLiElement(todo) {
         const div = document.createElement("div")
+        const li = document.createElement("li")
         const checkbox = document.createElement("input")
+
+        const span = document.createElement("span")
+        span.innerText = todo.text
+
+        if (todo.checked === true) {
+            span.classList.add("strike")
+        }
+
         checkbox.type = "checkbox"
         checkbox.checked = todo.checked
 
-        const text = document.createTextNode(todo.text)
-
         checkbox.addEventListener("click", () => {
             todo.checked = !todo.checked
-            // TODO update the UI is not working
-            // updateUI()
+            updateUI()
         })
 
         div.appendChild(checkbox)
-
-        div.appendChild(text)
-        const li = document.createElement("li")
+        div.appendChild(span)
         li.appendChild(div)
         return li
     }
