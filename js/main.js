@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         checkbox.addEventListener("click", () => {
             todo.checked = !todo.checked
+            // TODO update the UI is not working
             // updateUI()
         })
 
