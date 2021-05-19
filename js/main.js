@@ -49,14 +49,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const div = document.createElement("div")
         const checkbox = document.createElement("input")
         checkbox.type = "checkbox"
-        checkbox.classList.add("list-box")
         checkbox.checked = todo.checked
 
         const text = document.createTextNode(todo.text)
 
- /*       checkbox.addEventListener("click", () => {
-            text.classList.add("strike")
-        })*/
+        checkbox.addEventListener("click", () => {
+            todo.checked = !todo.checked
+            updateUI()
+        })
 
         div.appendChild(checkbox)
 
