@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         checkbox.addEventListener("click", () => {
             todo.checked = !todo.checked
-            updateUI()
+            // updateUI()
         })
 
         div.appendChild(checkbox)
